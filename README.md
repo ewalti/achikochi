@@ -6,7 +6,7 @@ Native HTML5 Drag and Drop API jQuery plugin for sortable items.
 This is a plug-in based on [bgrin's](https://github.com/bgrins/ "Github user: bgrins")
 [nativesortable](https://github.com/bgrins/nativesortable "nativesortable") native HTML5 drag and drop plugin.
 
-I wrapped it as a jQuery plugin and extended it to have an exposed API (revealing module pattern) and callback hooks. 
+I wrapped it as a jQuery plugin and extended it to have an exposed API (revealing module pattern) and callback hooks.
 
 It is very much a work in progress.
 
@@ -15,11 +15,11 @@ It is very much a work in progress.
 **Instantiation:**
 
     $('.list').achikochi();
-    
+
 **Check for existence:**
 
-	$('.list').data('achikochi');
-    
+  $('.list').data('achikochi');
+
 **Options:** (defaults)
 
     var options = {
@@ -31,14 +31,18 @@ It is very much a work in progress.
       onDestroy: function() {} // destroy plugin callback
     }
 
+Alternatively, options can be set singularly after instantiation via:
+
+    $('#el').demoplugin('option', 'key', value);
+
 **Updating**: (useful if you are adding elements to the container and want the added elements to function properly)
 
     $('.list').achikochi('update');
-    
+
 
 **Destroying:**
 
-	$('.list').achikochi('destroy');
+  $('.list').achikochi('destroy');
 
 
 ## Dependencies
