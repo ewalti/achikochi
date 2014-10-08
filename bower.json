@@ -1,0 +1,22 @@
+{
+  "name": "achikochi",
+  "version": "0.0.1",
+  "authors": [
+    "Eric Walti <ewalti@gmail.com>"
+  ],
+  "description": "Native HTML5 drag and drop + sortable jQuery plugin",
+  "main": "achikochi.js",
+  "license": "GNU",
+  "homepage": "http://www.ewalti.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": ">= 1.7.1"
+  }
+}

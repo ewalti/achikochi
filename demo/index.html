@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Achikochi Demo</title>
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../achikochi.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      var offset = 5;
+      var dnd = $('.dnd');
+
+      var options = {
+        debug: true,
+        onDragStart: function() {
+          console.log('onDragStart callback');
+        },
+        onDragComplete: function() {
+          console.log('onDragComplete callback');
+        }
+      }
+
+      $('.dnd').achikochi(options);
+
+      $('.add').on('click', function(){
+        dnd.append($('<li>').text(++offset));
+        dnd.achikochi('update');
+      });
+
+      $('.start').on('click', function(){
+        dnd.achikochi(options);
+      });
+
+      $('.destroy').on('click', function(){
+        dnd.achikochi('destroy');
+      });
+
+    });
+  </script>
+  <style>
+    li {
+      list-style: none;
+      width: 50px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      display: block;
+      float: left;
+      border: 1px solid #fff;
+      border-radius: 4px;
+      background: #eee;
+    }
+    .dragging {
+      border: 1px solid red;
+    }
+    .over {
+      background: green;
+    }
+    .dnd::after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <ul class="dnd">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ul>
+
+  <button class="add">Add item</button>
+  <button class="start">Start DND</button>
+  <button class="destroy">Destroy DND</button>
+
+</body>
+</html>
