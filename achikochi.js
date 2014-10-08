@@ -281,7 +281,7 @@
   // Default plugin options.
   // Options can be overwritten when initializing plugin, by
   // passing an object literal, or after initialization:
-  // $('#el').demoplugin('option', 'key', value);
+  // $('#el').achikochi('option', 'key', value);
   $.fn[pluginName].defaults = {
     debug: false,
     childSelector: '',
