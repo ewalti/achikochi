@@ -176,8 +176,8 @@
 
     /**
      * Get/set a plugin option.
-     * Get usage: $('#el').demoplugin('option', 'key');
-     * Set usage: $('#el').demoplugin('option', 'key', value);
+     * Get usage: $('#el').achikochi('option', 'key');
+     * Set usage: $('#el').achikochi('option', 'key', value);
      */
     function option (key, val) {
       if (val) {
@@ -189,7 +189,7 @@
 
     /**
      * Destroy plugin.
-     * Usage: $('#el').demoplugin('destroy');
+     * Usage: $('#el').achikochi('destroy');
      */
     function destroy() {
       log('destroying');
