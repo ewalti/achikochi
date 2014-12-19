@@ -54,6 +54,7 @@
       draggingEl = $(this);
       draggingEl.addClass('dragging');
       hook('onDragStart');
+      event.stopPropagation();
     }
 
     function dragData(element, val) {
@@ -125,21 +126,23 @@
 
     function handleDrop(event) {
       log('handleDrop');
-      if (event.type === 'drop') {
-        log('drop');
-        event.stopPropagation();
-        event.preventDefault();
-      }
+      // if (event.type === 'drop') {
+      //   log('drop');
+      //   event.stopPropagation();
+      //   event.preventDefault();
+      // }
+      // event.stopPropagation();
+      // event.preventDefault();
     }
 
     function handleDragOver(event) {
       log('handleDragOver');
       if (!draggingEl) return true;
+      event.stopPropagation();
       event.preventDefault();
-      return false;
     }
 
-    function handleDragEnd() {
+    function handleDragEnd(event) {
       log('handleDragEnd');
       currentlyDraggingElement = null;
       currentlyDraggingTarget = null;
@@ -148,6 +151,8 @@
         $(this).removeClass('dragging over');
       });
       hook('onDragComplete');
+      event.stopPropagation();
+      event.preventDefault();
     }
 
     function initializeElement(el) {
